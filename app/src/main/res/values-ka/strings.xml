@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">დაკარგული&amp;ნაპოვნი</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="additem">ნივთის დამატება</string>
+    <string name="add_item">ნივთის დამატება</string>
+    <string name="title">სათაური</string>
+    <string name="description">აღწერა</string>
+    <string name="status">სტატუსი</string>
+    <string name="lost">დაკარგული</string>
+    <string name="found">ნაპოვნი</string>
+    <string name="save">შენახვა</string>
+    <string name="search">ძებნა</string>
+    <string name="log_in">შესვლა</string>
+    <string name="email">მეილი</string>
+    <string name="password">პაროლი</string>
+    <string name="remember_me">დამახსოვრება</string>
+    <string name="don_t_have_an_account_register">არ გაქვს პროფილი? დარეგისტრირდი</string>
+    <string name="log_out">გამოსვლა</string>
+    <string name="register">რეგისტრაცია</string>
+    <string name="full_name">სრული სახელი</string>
+    <string name="repeat_password">გაიმეორე პაროლი</string>
+    <string name="already_have_an_account_login">გაქვს პროფილი? შესვლა</string>
+    <string name="item_title">ნივთის დასახელება</string>
+    <string name="item_description">ნივთის აღწერა</string>
+    <string name="date">თარიღი</string>
+    <string name="lost_items">დაკარგული ნივთები</string>
+    <string name="found_items">ნაპოვნი ნივთები</string>
+</resources>

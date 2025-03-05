@@ -6,4 +6,24 @@
     </style>
 
     <style name="Theme.LostFound" parent="Base.Theme.LostFound" />
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorAccent</item>
+    </style>
+    <style name="Theme.LostAndFoundApp" parent="Theme.MaterialComponents.Light">
+        <!-- Primary Color (Tab Background) -->
+        <item name="colorPrimary">#6200EE</item>
+
+        <!-- Selected Tab Indicator Color -->
+        <item name="colorAccent">#03DAC5</item>
+
+        <!-- Unselected Tab Text Color -->
+        <item name="tabTextColor">#808080</item>
+
+        <!-- Selected Tab Text Color -->
+        <item name="tabSelectedTextColor">#FFFFFF</item>
+    </style>
 </resources>

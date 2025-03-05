@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Lost&amp;Found</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="additem">AddItem</string>
+    <string name="add_item">Add item</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="status">Status</string>
+    <string name="lost">Lost</string>
+    <string name="found">Found</string>
+    <string name="save">Save</string>
+    <string name="search">Search</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="log_out">Log Out</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="item_title">Item Title</string>
+    <string name="item_description">Item Description</string>
+    <string name="date">Date</string>
+    <string name="lost_items">Lost Items</string>
+    <string name="found_items">Found Items</string>
+    <string name="profile">profile</string>
 </resources>
