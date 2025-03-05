@@ -12,3 +12,6 @@ View Binding
 Dependency injection
 Fragments
 MVVM architecture
+View Pager2
+Recycler View
+
