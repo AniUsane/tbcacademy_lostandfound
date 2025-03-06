@@ -26,6 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu"
+        app:backgroundTint="@color/light_gray"
+        app:itemIconTint="@color/button_secondary"
+        app:itemTextColor="@color/button_secondary"
+        app:itemRippleColor="@color/button_primary"
+        app:itemTextAppearanceActiveBoldEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment"
         />

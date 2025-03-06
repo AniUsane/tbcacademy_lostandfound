@@ -4,11 +4,9 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.lostfound.presentation.base.BaseFragment
 import com.example.lostfound.R
 import com.example.lostfound.databinding.FragmentAddItemBinding
-import com.example.lostfound.data.model.ItemStatus
-import com.example.lostfound.data.model.LostFoundItem
+import com.example.lostfound.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -17,43 +15,30 @@ class AddItemFragment : BaseFragment<FragmentAddItemBinding>(FragmentAddItemBind
     private val viewModel: AddItemViewModel by viewModels()
 
     override fun start() {
-
         listeners()
         observeItems()
-
     }
 
-    //listener for save button
-    private fun listeners(){
+    // Listener for save button
+    private fun listeners() {
         binding.buttonSave.setOnClickListener {
-            val title = binding.titleLabel.text.toString()
+            val title = binding.title.text.toString()
             val description = binding.description.text.toString()
+            val location = binding.location.text.toString()
 
-            if(title.isEmpty() || description.isEmpty()) {
+            if (title.isEmpty() || description.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val selectedRadioId = binding.radioGroup.checkedRadioButtonId
-            val status = when (selectedRadioId) {
-                R.id.radioLost -> ItemStatus.LOST
-                R.id.radioFound -> ItemStatus.FOUND
-                else -> ItemStatus.LOST
-            }
+            val status = if (binding.radioGroup.checkedRadioButtonId == R.id.radioLost) "LOST" else "FOUND"
 
-            val newItem = LostFoundItem(
-                title = title,
-                description = description,
-                status = status
-            )
-
-            viewModel.addItem(newItem)
-
+            viewModel.addItem(title, description, location, status)
         }
     }
 
-    //function observes the items states and notifies whether they are successfully added or not
-    private fun observeItems(){
+    //observes added items state
+    private fun observeItems() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.addItemState.collect { result ->
                 result?.onSuccess {
@@ -65,4 +50,6 @@ class AddItemFragment : BaseFragment<FragmentAddItemBinding>(FragmentAddItemBind
             }
         }
     }
+
+
 }

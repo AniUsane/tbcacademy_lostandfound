@@ -26,4 +26,8 @@
     <string name="date">თარიღი</string>
     <string name="lost_items">დაკარგული ნივთები</string>
     <string name="found_items">ნაპოვნი ნივთები</string>
+    <string name="profile">პროფილი</string>
+    <string name="loading">იტვირთება...</string>
+    <string name="location">ლოკაცია</string>
+
 </resources>

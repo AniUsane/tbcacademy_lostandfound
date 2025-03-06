@@ -7,7 +7,9 @@ import com.example.lostfound.data.model.LostFoundItem
 import com.example.lostfound.presentation.repository.FirestoreRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,8 +19,10 @@ class LostViewModel @Inject constructor(private val repository: FirestoreReposit
     private val _addItemState = MutableStateFlow<Result<Boolean>?>(null)
     val addItemState: StateFlow<Result<Boolean>?> get() = _addItemState
 
-    val lostItems = repository.getItem(ItemStatus.LOST)
-    val foundItems = repository.getItem(ItemStatus.FOUND)
+    val lostItems = repository.getItems(ItemStatus.LOST)
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
+    val foundItems = repository.getItems(ItemStatus.FOUND)
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     //add item logic
     fun addItem(item: LostFoundItem) {

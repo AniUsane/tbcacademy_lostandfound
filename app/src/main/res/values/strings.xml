@@ -6,7 +6,7 @@
     <string name="add_item">Add item</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
-    <string name="status">Status</string>
+    <string name="status">Choose status</string>
     <string name="lost">Lost</string>
     <string name="found">Found</string>
     <string name="save">Save</string>
@@ -27,4 +27,6 @@
     <string name="lost_items">Lost Items</string>
     <string name="found_items">Found Items</string>
     <string name="profile">profile</string>
+    <string name="loading">Loading...</string>
+    <string name="location">Location</string>
 </resources>

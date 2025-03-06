@@ -15,12 +15,17 @@ class LogInViewModel():ViewModel() {
     private val _loginState = MutableStateFlow<Result<Boolean>?>(null)
     val loginState: StateFlow<Result<Boolean>?> get() = _loginState
 
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> get() = _isLoading
+
     //login function which checks that emails and password fields are not empty.
     fun login(email: String, password: String) {
         if (email.isEmpty() || password.isEmpty()) {
             _loginState.value = Result.failure(Exception("Email and password cannot be empty"))
             return
         }
+
+        _isLoading.value = true
 
         //performs firebase authentication with email and password
         viewModelScope.launch(Dispatchers.IO) {
@@ -35,6 +40,8 @@ class LogInViewModel():ViewModel() {
                 }
             } catch (e: Exception) {
                 _loginState.value = Result.failure(e)
+            } finally {
+                _isLoading.value = false
             }
         }
     }

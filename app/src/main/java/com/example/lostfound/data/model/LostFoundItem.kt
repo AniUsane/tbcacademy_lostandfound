@@ -9,5 +9,7 @@ data class LostFoundItem(
     val description: String = "Found wallet in the mall",
     val date: Date = Date(),
     val userId: String = "user123",
-    val status: ItemStatus = ItemStatus.LOST
+    val status: ItemStatus = ItemStatus.LOST,
+    val location: String = "Unknown",
+    val image: String? = null
 )

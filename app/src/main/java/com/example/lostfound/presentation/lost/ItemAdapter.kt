@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lostfound.R
 import com.example.lostfound.data.model.LostFoundItem
 import com.example.lostfound.databinding.ItemRecyclerBinding
+import javax.inject.Inject
 
 //checks item ids for updates
 class ItemDiffUtil: DiffUtil.ItemCallback<LostFoundItem>(){
@@ -21,7 +23,9 @@ class ItemDiffUtil: DiffUtil.ItemCallback<LostFoundItem>(){
 }
 
 //adapter for displaying items
-class ItemAdapter: ListAdapter<LostFoundItem, ItemAdapter.ItemViewHolder>(ItemDiffUtil()) {
+class ItemAdapter @Inject constructor(
+    private val glide: Glide
+): ListAdapter<LostFoundItem, ItemAdapter.ItemViewHolder>(ItemDiffUtil()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -42,10 +46,11 @@ class ItemAdapter: ListAdapter<LostFoundItem, ItemAdapter.ItemViewHolder>(ItemDi
     inner class ItemViewHolder(private val binding: ItemRecyclerBinding):
             RecyclerView.ViewHolder(binding.root){
                 fun onBind(item: LostFoundItem) {
-                    binding.textViewTitle.text = item.title
-                    binding.textViewDescription.text = item.description
+                    binding.title.text = item.title
+                    binding.description.text = item.description
+                    binding.location.text = item.location
+                    binding.date.text = java.text.SimpleDateFormat("dd MMM yyyy").format(item.date)
 
-                    binding.textViewDate.text = java.text.SimpleDateFormat("dd MMM yyyy").format(item.date)
                 }
             }
 }

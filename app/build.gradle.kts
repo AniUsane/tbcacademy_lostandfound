@@ -50,6 +50,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.google.firebase.auth.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.google.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -67,6 +72,9 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.55")
     kapt("com.google.dagger:hilt-android-compiler:2.55")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
 }
 

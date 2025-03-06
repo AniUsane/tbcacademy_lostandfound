@@ -2,6 +2,7 @@ package com.example.lostfound.presentation.login
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -24,7 +25,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
         loadSavedCredentials()
         listeners()
         observeLoginState()
-
+        observeLoader()
     }
 
     private fun listeners(){
@@ -66,6 +67,15 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
                 }
             }
 
+        }
+    }
+
+    //observes loader
+    private fun observeLoader(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            logInViewModel.isLoading.collectLatest { isLoading ->
+                binding.loaderLayout.visibility = if (isLoading) View.VISIBLE else View.GONE
+            }
         }
     }
 
